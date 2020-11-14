@@ -54,7 +54,7 @@ class Post(models.Model):
     author = models.CharField(max_length=100)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True,verbose_name='опубликовано')
-    photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank = True)
+    # photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank = True)
     views = models.IntegerField(default=0, verbose_name = 'Количество просмотров')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='posts')
     tags = models.ManyToManyField(Tag, blank=True, related_name='posts')
